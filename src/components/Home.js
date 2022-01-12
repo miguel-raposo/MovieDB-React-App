@@ -9,6 +9,7 @@ import SearchBar from './SearchBar';
 import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
+import Button from './Button';
 
 // Hook
 import { useHomeFetch } from '../hooks/useHomeFetch';
@@ -18,7 +19,9 @@ import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
 
-    const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
+    const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore} = useHomeFetch();
+
+    if (error) return <div>Something went wrong...</div>;
 
     return (
         <>
@@ -35,7 +38,7 @@ const Home = () => {
                 { state.results.map(movie => (
                     <Thumb
                         key = { movie.id }
-                        clicakble
+                        clickable
                         image = { 
                             movie.poster_path 
                                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
@@ -45,7 +48,10 @@ const Home = () => {
                     />
                 ))}
             </Grid>
-            <Spinner />
+            { loading && <Spinner/>}
+            { state.page < state.total_pages && !loading && (
+                <Button text = 'Load More' callback = {() => setIsLoadingMore(true)} />
+            )}
         </>
     );
 }
