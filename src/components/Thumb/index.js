@@ -15,7 +15,9 @@ const Thumb = ({ image, clickable, movieId, title }) => (
                 <Image src = { image } alt = 'movie-thumb' /> 
             )
         } 
-        <h3>{ title }</h3>
+        <div>
+            <h3>{ title }</h3>
+        </div>
     </Wrapper>
 );
 

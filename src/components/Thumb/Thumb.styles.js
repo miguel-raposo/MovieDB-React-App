@@ -5,12 +5,22 @@ export const Wrapper = styled.div`
     background: var(--darkGrey);
     border-radius: 20px;
     text-align: center; 
+    
+    div {
+        height: 90px;
+        line-height: 90px;
+    }
 
     h3 {
         margin: auto;
         width: 90%;
         padding: 5px 0;
         font-size: var(--fontMed);
+        
+        
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 20px; /* <-- adjust this */
     }
 `;
 export const Image = styled.img`
