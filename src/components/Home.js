@@ -44,7 +44,8 @@ const Home = () => {
                                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                                 : NoImage  
                         }
-                        movieId = { movie.id } 
+                        movieId = { movie.id }
+                        title = { movie.title }
                     />
                 ))}
             </Grid>
