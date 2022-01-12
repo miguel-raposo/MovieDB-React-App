@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+    color: var(--white);
+    background: var(--darkGrey);
+    border-radius: 20px;
+    text-align: center; 
+
+    h3 {
+        margin: auto;
+        width: 90%;
+        padding: 5px 0;
+        font-size: var(--fontMed);
+    }
+`;
 export const Image = styled.img`
     width: 100%;
     max-width: 720px;
