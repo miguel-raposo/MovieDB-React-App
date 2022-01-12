@@ -48,21 +48,21 @@ export const useHomeFetch = () => {
         if (!searchTerm) {
             const sessionState = isPersistedState('homeState');
 
-            if (sessionState) {
-                console.log('Get from sessionStorage');
+            if (sessionState) { 
                 setState(sessionState);
                 return;
             }
         }
 
         setState(initialState);
-        fetchMovies(1, searchTerm)
+        fetchMovies(1, searchTerm);
+        fetchMovies(2, searchTerm);
     }, [searchTerm]);
 
     // Load More
     useEffect(() => {
-        if (!isLoadingMore) return;
-        console.log('Get from API');
+        if (!isLoadingMore) return; 
+
         fetchMovies(state.page + 1, searchTerm);
         setIsLoadingMore(false);
         
@@ -70,8 +70,7 @@ export const useHomeFetch = () => {
 
     // Write to sessionStorage
     useEffect(() => {
-        if (!searchTerm) {
-            console.log('Set sessionStorage');
+        if (!searchTerm) { 
             sessionStorage.setItem('homeState', JSON.stringify(state));
         }
 
