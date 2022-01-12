@@ -42,7 +42,7 @@ export const Text = styled.div`
         font-size: var()(--fontSuperBig);
 
         @media screen and (max-width: 720px){
-            font-size: var()(--fontBig);
+            font-size: var(--fontBig);
         }
     }
 
