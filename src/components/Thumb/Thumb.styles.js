@@ -16,8 +16,6 @@ export const Wrapper = styled.div`
         width: 90%;
         padding: 5px 0;
         font-size: var(--fontMed);
-        
-        
         display: inline-block;
         vertical-align: middle;
         line-height: 20px; /* <-- adjust this */
